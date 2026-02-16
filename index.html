@@ -3,51 +3,58 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yan Nohan Luximon | IT Support Technician & Technical Support Specialist (Entry-Level)</title>
+<title>Yan Nohan Luximon | IT Support Technician & Technical Support Specialist</title>
+
+<!-- Google Fonts for modern look -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ---------- Global Styles ---------- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     color: #333;
-    background-color: #f4f8fc; 
+    background-color: #f4f8fc;
 }
-    
-   header {
+
+h1,h2,h3 {
+    font-family: 'Inter', sans-serif;
+}
+
+/* ---------- Header ---------- */
+header {
+    position: relative;
     background: linear-gradient(135deg, #0a192f, #112240);
     color: white;
     text-align: center;
     padding: 60px 20px;
     animation: fadeHeader 1.2s ease forwards;
-    position: relative;
     overflow: hidden;
 }
 
 header::after {
     content: "";
     position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200%;
-    height: 200%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%233864e0' fill-opacity='0.05' d='M0,64L60,69.3C120,75,240,85,360,112C480,139,600,181,720,208C840,235,960,245,1080,213.3C1200,181,1320,107,1380,69.3L1440,32V320H0Z'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23dbeafe' fill-opacity='0.2' d='M0,224L60,202.7C120,181,240,139,360,144C480,149,600,203,720,197.3C840,192,960,128,1080,122.7C1200,117,1320,171,1380,197.3L1440,224V320H0Z'%3E%3C/path%3E%3C/svg%3E");
     background-size: cover;
-    z-index: 0;
+    background-repeat: no-repeat;
 }
 
 @keyframes fadeHeader {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
- header img {
+
+header img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
-    position: relative;
-    z-index: 1;
     transition: transform 0.3s ease;
 }
 
@@ -55,98 +62,144 @@ header img:hover {
     transform: scale(1.05);
 }
 
-section {
-    position: relative;
-    padding: 60px 20px;
-    max-width: 900px;
-    margin: auto;
-    background-color: transparent;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
-}
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%2393c5fd' fill-opacity='0.6' d='M0,160L60,144C120,128,240,96,360,101.3C480,107,600,149,720,170.7C840,192,960,192,1080,170.7C1200,149,1320,107,1380,85.3L1440,64V320H0Z'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.35;
-    z-index: -1;
+header h1 {
+    margin: 10px 0 5px;
+    font-size: 2.2em;
 }
 
-section.show {
-    opacity: 1;
-    transform: translateY(0);
+header p {
+    margin: 3px 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-h2 {
-    color: #0a192f;
-    border-bottom: 2px solid #0a192f;
-    padding-bottom: 10px;
-}
- .button {
-    background: linear-gradient(135deg, #0077ff, #00c6ff);
-    color: white;
+/* ---------- Buttons ---------- */
+.button, .download-btn {
+    display: inline-block;
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    display: inline-block;
-    margin-top: 15px;
     transition: all 0.3s ease;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.button {
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
+    color: white;
     box-shadow: 0 0 0 rgba(0, 198, 255, 0.7);
 }
 
 .button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 198, 255, 0.6);
-    background: linear-gradient(135deg, #00c6ff, #0077ff); /* reverse gradient for hover */
+    background-color: #112240;
 }
-   
 
+/* Premium Download CV Button */
+.download-btn {
+    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 16px;
+    color: white;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #0a192f, #1e3a8a);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+}
 
+.download-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 58, 138, 0.6);
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+.download-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+}
+
+/* ---------- Sections ---------- */
+section {
+    position: relative;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+/* Alternating pale wave backgrounds */
+section:nth-child(2n) {
+    background-color: rgba(211, 229, 255, 0.2);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%2393c5fd' fill-opacity='0.15' d='M0,160L60,144C120,128,240,96,360,101.3C480,107,600,149,720,170.7C840,192,960,192,1080,170.7C1200,149,1320,107,1380,85.3L1440,64V320H0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Section fade-in */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #0a192f;
+    border-bottom: 2px solid #0a192f;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+/* Lists with spacing */
+ul {
+    padding-left: 20px;
+}
+
+/* ---------- Contact Icons ---------- */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ---------- Footer ---------- */
 footer {
     text-align: center;
     padding: 20px;
     background: #0a192f;
     color: white;
-  }
+}
+
+/* ---------- Smooth scroll ---------- */
+html {
+    scroll-behavior: smooth;
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-   
     <img src="profile.jpg" alt="Yan Nohan Luximon">
     <h1>Yan Nohan Luximon</h1>
     <p>IT Support Technician & Technical Support Specialist (Entry-Level)</p>
-    <p>Mauritius</p>
-<p>Email: luxyan100@gmail.com</p>
-  <p>Phone: +230 58106713</p>  
+    <p class="contact-item">📍 Mauritius</p>
+    <p class="contact-item">✉️ luxyan100@gmail.com</p>
+    <p class="contact-item">📞 +230 58106713</p>
     <p>Date of Birth: 1 June 2007</p>
-  <a href="Yan_Nohan_Luximon_CV.pdf" class="button" download>
-    📄 Download CV
-</a>
-   
+    <a href="Yan_Nohan_Luximon_CV.pdf" class="download-btn" download>📄 Download CV</a>
 </header>
-<section>
-    <h2> Summary</h2>
-    <p>
-       Motivated IT Support Technician & Technical Support Specialist with training in computer repairs, IT systems, and web technologies. Proficient in Microsoft Office applications (Word, Excel, PowerPoint) for creating documents, spreadsheets, and presentations. Experienced in providing remote IT support and ready to collaborate across multiple time zones.
- Certified in ITQ Level 3 (City & Guilds) and Computer Repairs & IT Support.
- Currently preparing for CompTIA A+ certification.
- Seeking remote IT support opportunities to apply technical skills and continue professional growth.
 
+<section>
+    <h2>Summary</h2>
+    <p>
+        Motivated IT Support Technician & Technical Support Specialist with training in computer repairs, IT systems, and web technologies. 
+        Proficient in Microsoft Office applications (Word, Excel, PowerPoint). 
+        Experienced in providing remote IT support and collaborating across multiple time zones.
+        Certified in ITQ Level 3 (City & Guilds) and Computer Repairs & IT Support.
+        Currently preparing for CompTIA A+ certification.
+        Seeking remote IT support opportunities to apply technical skills and continue professional growth.
     </p>
 </section>
 
@@ -162,22 +215,18 @@ footer {
         <li>Remote Technical Assistance</li>
     </ul>
 </section>
+
 <section>
     <h2>Certifications</h2>
-
     <h3>ITQ Level 3 for IT Users – City & Guilds (UK)</h3>
     <a href="certs1.jpg" target="_blank" class="button">View Certificate</a>
     <a href="certs3.jpg" target="_blank" class="button">View Certificate</a>
-
     <h3>Computer Repairs & IT Support (80 Hours) – Wisdom In Tech (2025)</h3>
     <a href="certs2.jpg" target="_blank" class="button">View Certificate</a>
-
     <h3>Web Technologies (48 Hours) – Wisdom In Tech (2023)</h3>
     <a href="certs4.jpg" target="_blank" class="button">View Certificate</a>
-
     <h3>Multimedia Technologies (48 Hours) – Wisdom In Tech (2023)</h3>
     <a href="certs5.jpg" target="_blank" class="button">View Certificate</a>
-
     <h3>CompTIA A+ Certification</h3>
     <p>Currently In Progress</p>
 </section>
@@ -185,13 +234,12 @@ footer {
 <section>
     <h2>Education</h2>
     <p>
-        O Level – N. Saddul College<br>
-        Completed (2025)<br>
+        O Level – N. Saddul College, Mauritius (Completed 2025)<br>
         Eligible for A-Level Studies
     </p>
 </section>
 
-    <section>
+<section>
     <h2>Professional Development</h2>
     <ul>
         <li>Actively pursuing <strong>IT certifications and practical experience</strong> to strengthen skills in IT support.</li>
@@ -209,13 +257,12 @@ footer {
         <li>Supporting school-related IT tasks and basic technical assistance</li>
     </ul>
 </section>
+
 <section>
     <h2>Availability</h2>
     <p>
-       Actively seeking positions that allow me to apply my skills in hardware/software troubleshooting, Microsoft Office support, Emailing , System maintenance , System installation.
-Flexible to work across different time zones, providing troubleshooting, software installation, and system maintenance remotely.
-<br>
-        
+        Actively seeking positions that allow me to apply my skills in hardware/software troubleshooting, Microsoft Office support, emailing, system maintenance, and system installation.
+        Flexible to work across different time zones, providing troubleshooting, software installation, and system maintenance remotely.
     </p>
 </section>
 
@@ -225,17 +272,16 @@ Flexible to work across different time zones, providing troubleshooting, softwar
 
 <script>
 const sections = document.querySelectorAll("section");
-
 window.addEventListener("scroll", () => {
     sections.forEach(section => {
         const sectionTop = section.getBoundingClientRect().top;
         const triggerPoint = window.innerHeight - 100;
-
         if (sectionTop < triggerPoint) {
             section.classList.add("show");
         }
     });
 });
-</script>    
+</script>
 </body>
 </html>
+
