@@ -13,24 +13,46 @@ body {
     background-color: #f4f8fc; 
 }
     
-    header {
+   header {
     background: linear-gradient(135deg, #0a192f, #112240);
     color: white;
     text-align: center;
     padding: 60px 20px;
     animation: fadeHeader 1.2s ease forwards;
+    position: relative;
+    overflow: hidden;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%233864e0' fill-opacity='0.05' d='M0,64L60,69.3C120,75,240,85,360,112C480,139,600,181,720,208C840,235,960,245,1080,213.3C1200,181,1320,107,1380,69.3L1440,32V320H0Z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
 }
 
 @keyframes fadeHeader {
     from { opacity: 0; transform: translateY(-30px); }
     to { opacity: 1; transform: translateY(0); }
 }
-  header img {
+ header img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+header img:hover {
+    transform: scale(1.05);
 }
 
 section {
