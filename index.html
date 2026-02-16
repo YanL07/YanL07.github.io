@@ -14,10 +14,17 @@ body {
 }
 
 header {
-    background: #0a192f;
+    header {
+    background: linear-gradient(135deg, #0a192f, #112240);
     color: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    animation: fadeHeader 1.2s ease forwards;
+}
+
+@keyframes fadeHeader {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
   header img {
     width: 150px;
@@ -28,9 +35,21 @@ header {
 }
 
 section {
-    padding: 40px 20px;
+    padding: 60px 20px;
     max-width: 900px;
     margin: auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 h2 {
@@ -38,14 +57,22 @@ h2 {
     border-bottom: 2px solid #0a192f;
     padding-bottom: 10px;
 }
-  .button {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #0a192f;
+ .button {
+    background: linear-gradient(135deg, #0077ff, #00c6ff);
     color: white;
+    padding: 12px 25px;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    border-radius: 30px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(0, 198, 255, 0.7);
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 198, 255, 0.6);
 }
 
 .button:hover {
@@ -64,11 +91,12 @@ footer {
 <body>
 
 <header>
-    <!-- Replace profile.jpg with your actual uploaded photo name -->
+   
     <img src="profile.jpg" alt="Yan Nohan Luximon">
     <h1>Yan Nohan Luximon</h1>
     <p>Junior IT Support Technician (Entry-Level)</p>
     <p>Date of Birth: 1 June 2007</p>
+    <a href="Yan_Nohan_Luximon_CV.pdf" class="button" download>Download CV</a>
 </header>
 <section>
     <h2>Professional Summary</h2>
@@ -96,16 +124,17 @@ footer {
     <h2>Certifications</h2>
 
     <h3>ITQ Level 3 for IT Users – City & Guilds (UK)</h3>
-    <a href="itq_certificate.jpg" target="_blank" class="button">View Certificate</a>
+    <a href=certs1.jpg" target="_blank" class="button">View Certificate</a>
+     <a href=certs3.jpg" target="_blank" class="button">View Certificate</a>
 
     <h3>Computer Repairs & IT Support (80 Hours) – Wisdom In Tech (2025)</h3>
-    <a href="repair_certificate.jpg" target="_blank" class="button">View Certificate</a>
+    <a href="certs2" target="_blank" class="button">View Certificate</a>
 
     <h3>Web Technologies (48 Hours) – Wisdom In Tech (2023)</h3>
-    <a href="web_certificate.jpg" target="_blank" class="button">View Certificate</a>
+    <a href="certs4" target="_blank" class="button">View Certificate</a>
 
     <h3>Multimedia Technologies (48 Hours) – Wisdom In Tech (2023)</h3>
-    <a href="multimedia_certificate.jpg" target="_blank" class="button">View Certificate</a>
+    <a href="certs5.jpg" target="_blank" class="button">View Certificate</a>
 
     <h3>CompTIA A+ Certification</h3>
     <p>Currently In Progress</p>
@@ -141,5 +170,19 @@ footer {
     <p>© 2026 Yan Nohan Luximon | Junior IT Support Technician</p>
 </footer>
 
+<script>
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight - 100;
+
+        if (sectionTop < triggerPoint) {
+            section.classList.add("show");
+        }
+    });
+});
+</script>    
 </body>
 </html>
