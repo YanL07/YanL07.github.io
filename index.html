@@ -89,6 +89,30 @@ h2 {
     box-shadow: 0 10px 25px rgba(0, 198, 255, 0.6);
     background-color: #112240;
 }
+    .download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #0a192f, #1e3a8a);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+}
+
+.download-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(30, 58, 138, 0.6);
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+.download-btn:active {
+    transform: translateY(0px);
+    box-shadow: 0 5px 15px rgba(30, 58, 138, 0.4);
+}
 
 footer {
     text-align: center;
@@ -110,7 +134,9 @@ footer {
 <p>Email: luxyan100@gmail.com</p>
   <p>Phone: +230 58106713</p>  
     <p>Date of Birth: 1 June 2007</p>
-    <a href="Yan_Nohan_Luximon_CV.pdf" class="button" download>Download CV</a>
+   <a href="Yan_Nohan_Luximon_CV.pdf" class="download-btn" download>
+    📄 Download CV
+</a>
 </header>
 <section>
     <h2> Summary</h2>
